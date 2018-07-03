@@ -41,7 +41,7 @@ GUI::GUI() {
 	fps = 60;
 	width = 1000;
 	height = 600;
-	window = new RenderWindow(VideoMode(width, height), "SFML Works!");
+	window = new RenderWindow(VideoMode(width, height), window_name.c_str());
 	clock = new Clock();
 }
 
@@ -50,10 +50,10 @@ GUI::~GUI(){
 	delete(clock);
 }
 
-int GUI::getWidth() const{
+float GUI::getWidth() const{
 	return width;
 }
-int GUI::getHeight() const {
+float GUI::getHeight() const {
 	return height;
 }
 

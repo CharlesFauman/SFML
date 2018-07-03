@@ -6,8 +6,7 @@
 
 class Paddle {
 private:
-	float x, y;
-	float width, height;
+	sf::RectangleShape body;
 	float speed;
 	Direction direction;
 

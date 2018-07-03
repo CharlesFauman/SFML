@@ -16,5 +16,5 @@ public:
 
 private:
 	Model() {}
-	static std::unordered_map<FrameName, Frame> frame_map;
+	//static std::unordered_map<FrameName, Frame> frame_map;
 };

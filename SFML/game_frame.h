@@ -4,6 +4,7 @@
 #include "paddle.h"
 #include "direction.h"
 
+class Paddle;
 class GameFrame : public Frame{
 private:
 	Paddle * paddle;

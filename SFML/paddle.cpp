@@ -4,39 +4,35 @@
 using namespace sf;
 
 Paddle::Paddle() {
-	x = Model::gui->getWidth() / 2;
-	y = 7 * Model::gui->getHeight() / 8;
-	width = Model::gui->getWidth()/8;
-	height = Model::gui->getHeight() / 32;
+	body.setSize(Vector2f((Model::gui->getWidth() / 8), (Model::gui->getHeight() / 32)));
+	body.setPosition(Model::gui->getWidth() / 2, 7 * Model::gui->getHeight() / 8);
+	body.setFillColor(Color::Cyan);
 	speed = 10;
 	direction = Direction::None;
 }
 
+#include <iostream>
 const void Paddle::draw(RenderWindow &window) {
-	RectangleShape rect;
-	rect.setSize(Vector2f(width, height));
-	rect.setPosition(x, y);
-	rect.setFillColor(Color::Cyan);
-	window.draw(rect);
+	window.draw(body);
 }
 
 void Paddle::update() {
 	switch (direction) {
 	case Direction::Left:
-		x -= speed;
+		body.move(Vector2f (-speed, 0));
 		break;
 	case Direction::Right:
-		x += speed;
+		body.move(Vector2f(speed, 0));
 		break;
 	default:
 		break;
 	}
 
-	if (x < 0) {
-		x = 0;
+	if (body.getPosition().x < 0) {
+		body.setPosition(Vector2f(0, body.getPosition().y));
 	}
-	else if (x + width > Model::gui->getWidth()) {
-		x = Model::gui->getWidth() - width;
+	else if (body.getPosition().x + body.getSize().x > Model::gui->getWidth()) {
+		body.setPosition(Vector2f(Model::gui->getWidth() - body.getSize().x, body.getPosition().y));
 	}
 }
 

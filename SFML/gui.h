@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <string>
 
 #include "model.h"
 #include "frame.h"
@@ -10,7 +11,8 @@ private:
 	sf::RenderWindow * window;
 	sf::Clock* clock;
 	int fps;
-	int width, height;
+	float width, height;
+	std::string window_name;
 
 	// Non Modifying Methods
 	const void draw() const;
@@ -29,8 +31,8 @@ public:
 	~GUI();
 
 	// Non Modifying Methods
-	int getWidth() const;
-	int getHeight() const;
+	float getWidth() const;
+	float getHeight() const;
 
 	// Modifiers
 	void run();
