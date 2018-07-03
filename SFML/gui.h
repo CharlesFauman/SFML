@@ -21,11 +21,16 @@ private:
 	void update();
 
 public:
+
 	// Constructors
 	GUI();
 
 	// Destructors
 	~GUI();
+
+	// Non Modifying Methods
+	int getWidth();
+	int getHeight();
 
 	// Modifiers
 	void run();

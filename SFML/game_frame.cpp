@@ -1,39 +1,44 @@
+#pragma once
 #include "game_frame.h"
 
 using namespace sf;
 
 GameFrame::GameFrame() {
-	player = new Player();
+	paddle = new Paddle();
 }
 
 GameFrame::~GameFrame() {
-	delete(player);
+	delete(paddle);
 }
 
 const void GameFrame::draw(RenderWindow &window) const{
-	player->draw(window);
+	paddle->draw(window);
 }
 
 void GameFrame::update() {
-	player->update();
+	paddle->update();
 }
 
 const void GameFrame::keyPressed(Event::KeyEvent e) {
 	switch (e.code) {
-	case Keyboard::Key::Up:
-		player->setDirection(Direction::Up);
-		break;
-	case Keyboard::Key::Down:
-		player->setDirection(Direction::Down);
-		break;
 	case Keyboard::Key::Left:
-		player->setDirection(Direction::Left);
+		paddle->setDirection(Direction::Left);
 		break;
 	case Keyboard::Key::Right:
-		player->setDirection(Direction::Right);
+		paddle->setDirection(Direction::Right);
 		break;
-	case Keyboard::Key::Space:
-		player->setDirection(Direction::None);
+	default:
+		break;
+	}
+}
+
+const void GameFrame::keyReleased(Event::KeyEvent e) {
+	switch (e.code) {
+	case Keyboard::Key::Left:
+		if (paddle->getDirection() == Direction::Left) paddle->setDirection(Direction::None);
+		break;
+	case Keyboard::Key::Right:
+		if (paddle->getDirection() == Direction::Right) paddle->setDirection(Direction::None);
 		break;
 	default:
 		break;

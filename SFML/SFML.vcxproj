@@ -134,8 +134,8 @@
     <ClCompile Include="game_frame.cpp" />
     <ClCompile Include="gui.cpp" />
     <ClCompile Include="model.cpp" />
-    <ClCompile Include="player.cpp" />
-    <ClCompile Include="player.h" />
+    <ClCompile Include="paddle.cpp" />
+    <ClCompile Include="paddle.h" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>

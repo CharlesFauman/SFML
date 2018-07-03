@@ -1,12 +1,12 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "frame.h"
-#include "player.h"
+#include "paddle.h"
 #include "direction.h"
 
 class GameFrame : public Frame{
 private:
-	Player * player;
+	Paddle * paddle;
 
 public:
 	// Constructors
@@ -22,4 +22,5 @@ public:
 	void update() override;
 
 	const void keyPressed(sf::Event::KeyEvent e) override;
+	const void keyReleased(sf::Event::KeyEvent e) override;
 };

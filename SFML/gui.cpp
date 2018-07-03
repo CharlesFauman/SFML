@@ -51,6 +51,13 @@ GUI::~GUI(){
 	delete(clock);
 }
 
+int GUI::getWidth() {
+	return width;
+}
+int GUI::getHeight() {
+	return height;
+}
+
 void GUI::run() {
 	while (window->isOpen()) {
 		clock->restart();

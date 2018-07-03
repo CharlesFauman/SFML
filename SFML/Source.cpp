@@ -6,6 +6,5 @@ using namespace sf;
 
 
 int main() {
-	GUI gui;
-	gui.run();
+	Model::gui->run();
 }
