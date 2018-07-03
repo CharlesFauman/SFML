@@ -4,11 +4,11 @@
 using namespace sf;
 
 Paddle::Paddle() {
-	x = 50;
-	y = 50;
-	width = Model::gui->getWidth()/2;
-	height = 7 * Model::gui->getWidth() / 8;
-	speed = 3;
+	x = Model::gui->getWidth() / 2;
+	y = 7 * Model::gui->getHeight() / 8;
+	width = Model::gui->getWidth()/8;
+	height = Model::gui->getHeight() / 32;
+	speed = 10;
 	direction = Direction::None;
 }
 
@@ -30,6 +30,13 @@ void Paddle::update() {
 		break;
 	default:
 		break;
+	}
+
+	if (x < 0) {
+		x = 0;
+	}
+	else if (x + width > Model::gui->getWidth()) {
+		x = Model::gui->getWidth() - width;
 	}
 }
 

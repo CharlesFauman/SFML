@@ -29,8 +29,8 @@ public:
 	~GUI();
 
 	// Non Modifying Methods
-	int getWidth();
-	int getHeight();
+	int getWidth() const;
+	int getHeight() const;
 
 	// Modifiers
 	void run();

@@ -6,5 +6,6 @@ using namespace sf;
 
 
 int main() {
+	Model::active_frame = new GameFrame();
 	Model::gui->run();
 }
