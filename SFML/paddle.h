@@ -1,5 +1,4 @@
 #pragma once
-#include <utility>
 #include <SFML/Graphics.hpp>
 
 #include "direction.h"

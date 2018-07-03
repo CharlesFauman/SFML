@@ -1,7 +1,11 @@
 ﻿  Source.cpp
+  ball.cpp
+  game_frame.cpp
   gui.cpp
 c:\users\id student\desktop\sfml\sfml\gui.cpp(44): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
   model.cpp
   paddle.cpp
+  paddle.h
   Generating Code...
+x64\Debug\paddle.obj : warning LNK4042: object specified more than once; extras ignored
   SFML.vcxproj -> C:\Users\iD Student\Desktop\SFML\x64\Debug\SFML.exe
