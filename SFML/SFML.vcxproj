@@ -131,6 +131,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="game_frame.cpp" />
+    <ClCompile Include="gui.cpp" />
+    <ClCompile Include="model.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="player.h" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -139,6 +143,7 @@
     <ClInclude Include="frame.h" />
     <ClInclude Include="game_frame.h" />
     <ClInclude Include="gui.h" />
+    <ClInclude Include="model.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

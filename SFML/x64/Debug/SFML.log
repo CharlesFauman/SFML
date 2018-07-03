@@ -1,5 +1,2 @@
-﻿  Source.cpp
-c:\users\id student\desktop\sfml\sfml\gui.h(76): warning C4101: 'event': unreferenced local variable
-  player.h
-  Generating Code...
+﻿  gui.cpp
   SFML.vcxproj -> C:\Users\iD Student\Desktop\SFML\x64\Debug\SFML.exe
