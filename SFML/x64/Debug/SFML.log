@@ -1,3 +1,11 @@
-﻿  ball.cpp
-x64\Debug\paddle.obj : warning LNK4042: object specified more than once; extras ignored
+﻿  Source.cpp
+  ball.cpp
+c:\users\faumac\desktop\sfml\sfml\ball.cpp(17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  game_frame.cpp
+  gui.cpp
+c:\users\faumac\desktop\sfml\sfml\gui.cpp(44): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+  model.cpp
+  paddle.cpp
+  paddle.h
+  Generating Code...
   SFML.vcxproj -> C:\Users\faumac\Desktop\SFML\x64\Debug\SFML.exe

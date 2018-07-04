@@ -3,19 +3,23 @@
 #include <list>
 #include "paddle.h"
 
+class GameFrame;
 class Ball{
 private:
 	sf::Vector2f normalized_velocity;
 	float speed;
+	GameFrame* game;
 
 public:
 	sf::CircleShape body;
 
-	void update(Paddle &p, std::list<sf::RectangleShape> &bricks);
+	void update();
+
+	void reset();
 
 	const void draw(sf::RenderWindow &window);
 
-	Ball();
+	Ball(GameFrame* g);
 	~Ball();
 };
 

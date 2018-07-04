@@ -3,6 +3,7 @@
 
 #include "direction.h"
 
+class GameFrame;
 class Paddle {
 private:
 	float speed;

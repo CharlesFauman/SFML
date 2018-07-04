@@ -9,11 +9,16 @@
 
 class GameFrame : public Frame{
 private:
-	Paddle* paddle;
+	sf::Text score_text;
+	sf::Text lives_text;
+	sf::Font font;
+public:
+	Paddle * paddle;
 	Ball* ball;
+	int score;
+	int lives;
 	std::list<sf::RectangleShape> bricks;
 
-public:
 	// Constructors
 	GameFrame();
 

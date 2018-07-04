@@ -149,6 +149,9 @@ sfml-graphics.lib;sfml-audio.lib;sfml-network.lib;sfml-window.lib;sfml-system.li
     <ClInclude Include="gui.h" />
     <ClInclude Include="model.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\..\Downloads\sewer.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
