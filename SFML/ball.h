@@ -1,4 +1,6 @@
 #pragma once
+#ifndef BALL_H
+#define BALL_H
 #include <SFML/Graphics.hpp>
 #include <list>
 #include "paddle.h"
@@ -22,4 +24,6 @@ public:
 	Ball(GameFrame* g);
 	~Ball();
 };
+
+#endif
 

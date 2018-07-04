@@ -1,16 +1,14 @@
-#include "ball.h"
-#include "model.h"
-
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-#include <iostream>
+#include "ball.h"
+#include "model.h"
 
 
 using namespace sf;
 
 void Ball::update(){
-	body.move(normalized_velocity.x*speed/3, normalized_velocity.y*speed/3);
+	body.move(normalized_velocity.x*speed/2, normalized_velocity.y*speed/2);
 
 	if (body.getGlobalBounds().intersects(game->paddle->body.getGlobalBounds())) {
 		float normalized_distance = (game->paddle->body.getPosition().x - body.getPosition().x) / (body.getRadius() + game->paddle->body.getSize().x / 2);
@@ -18,15 +16,22 @@ void Ball::update(){
 		normalized_velocity.x = -sin(bounce_angle);
 		normalized_velocity.y = cos(bounce_angle)*((normalized_velocity.y > 0) ? -1 : 1);
 	}
-	else if (body.getPosition().y - body.getRadius()*2 < 0) {
-		normalized_velocity.y *= -1;
+	else if (body.getPosition().y - body.getRadius() < 0) {
+		normalized_velocity.y = abs(normalized_velocity.y);
 	}
-	else if (body.getPosition().x - body.getRadius() < 0 || body.getPosition().x + body.getRadius() > Model::gui->getWidth()) {
-		normalized_velocity.x *= -1;
+	else if (body.getPosition().x - body.getRadius() < 0) {
+		normalized_velocity.x = abs(normalized_velocity.x);
+	}
+	else if (body.getPosition().x + body.getRadius() > Model::gui->getWidth()) {
+		normalized_velocity.x = -1*abs(normalized_velocity.x);
 	}
 	else if (body.getPosition().y + body.getRadius() * 2 > Model::gui->getHeight()) {
 		game->lives -= 1;
 		reset();
+		game->paddle->reset();
+		if (game->lives <= 0) {
+			Model::switchFrame(Model::FrameName::game_over_frame);
+		}
 	}
 
 	auto brick_itr = game->bricks.begin();
@@ -35,10 +40,16 @@ void Ball::update(){
 	while (brick_itr != game->bricks.end()) {
 		if (body.getGlobalBounds().intersects(brick_itr->getGlobalBounds())) {
 			Vector2f dists = (body.getPosition() - brick_itr->getPosition());
+			/*
 			if (!hit_y && abs(dists.x / brick_itr->getPosition().x) > abs(dists.y / brick_itr->getPosition().y)) {
 				normalized_velocity.x *= -1;
 				hit_y = true;
 			}else if(!hit_x){
+				normalized_velocity.y *= -1;
+				hit_x = true;
+			}
+			*/
+			if (!hit_x) {
 				normalized_velocity.y *= -1;
 				hit_x = true;
 			}
@@ -49,7 +60,7 @@ void Ball::update(){
 			++brick_itr;
 		}
 	}
-	body.move(2*normalized_velocity.x*speed / 3, 2*normalized_velocity.y*speed / 3);
+	body.move(normalized_velocity.x*speed / 2, normalized_velocity.y*speed / 2);
 }
 
 const void Ball::draw(sf::RenderWindow &window) {

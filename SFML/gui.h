@@ -1,4 +1,6 @@
 #pragma once
+#ifndef GUI_H
+#define GUI_H
 #include <SFML/Graphics.hpp>
 #include <string>
 
@@ -38,3 +40,5 @@ public:
 	void run();
 
 };
+
+#endif

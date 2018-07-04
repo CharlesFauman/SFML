@@ -1,4 +1,6 @@
 #pragma once
+#ifndef PADDLE_H
+#define PADDLE_H
 #include <SFML/Graphics.hpp>
 
 #include "direction.h"
@@ -26,4 +28,8 @@ public:
 	void setDirection(Direction d);
 	Direction getDirection() const;
 
+	void reset();
+
 };
+
+#endif

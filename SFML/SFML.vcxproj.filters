@@ -48,6 +48,12 @@
     <ClCompile Include="paddle.h">
       <Filter>Header Files\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="game_over_frame.cpp">
+      <Filter>Source Files\Frames</Filter>
+    </ClCompile>
+    <ClCompile Include="you_win_frame.cpp">
+      <Filter>Source Files\Frames</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="direction.h">
@@ -67,6 +73,12 @@
     </ClInclude>
     <ClInclude Include="ball.h">
       <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="game_over_frame.h">
+      <Filter>Header Files\Frames</Filter>
+    </ClInclude>
+    <ClInclude Include="you_win_frame.h">
+      <Filter>Header Files\Frames</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

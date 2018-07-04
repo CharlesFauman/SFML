@@ -1,4 +1,6 @@
 #pragma once
+#ifndef Frame_H
+#define Frame_H
 #include <SFML/Graphics.hpp>
 
 class Frame {
@@ -23,3 +25,5 @@ public:
 	// Modifiers
 	virtual void update() = 0;
 };
+
+#endif

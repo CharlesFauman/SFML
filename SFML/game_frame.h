@@ -1,4 +1,6 @@
 #pragma once
+#ifndef GAMEFRAME_H
+#define GAMEFRAME_H
 #include <SFML/Graphics.hpp>
 #include <list>
 
@@ -34,3 +36,5 @@ public:
 	const void keyPressed(sf::Event::KeyEvent e) override;
 	const void keyReleased(sf::Event::KeyEvent e) override;
 };
+
+#endif

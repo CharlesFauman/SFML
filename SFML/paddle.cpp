@@ -6,10 +6,9 @@ using namespace sf;
 Paddle::Paddle() {
 	body.setSize(Vector2f((Model::gui->getWidth() / 8), (Model::gui->getHeight() / 32)));
 	body.setOrigin(Vector2f(body.getSize().x/2, body.getSize().y/2));
-	body.setPosition(Model::gui->getWidth() / 2, 7 * Model::gui->getHeight() / 8);
 	body.setFillColor(Color::Cyan);
 	speed = 10;
-	direction = Direction::None;
+	reset();
 }
 
 #include <iostream>
@@ -43,4 +42,9 @@ void Paddle::setDirection(Direction d) {
 
 Direction Paddle::getDirection() const {
 	return direction;
+}
+
+void Paddle::reset() {
+	body.setPosition(Model::gui->getWidth() / 2, 7 * Model::gui->getHeight() / 8);
+	direction = Direction::None;
 }

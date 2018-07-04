@@ -55,6 +55,9 @@ void GameFrame::update() {
 	ball->update();
 	score_text.setString("score: " + std::to_string(score) );
 	lives_text.setString("lives: " + std::to_string(lives));
+	if (bricks.size() == 0) {
+		Model::switchFrame(Model::FrameName::you_win_frame);
+	}
 
 }
 
