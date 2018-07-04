@@ -1,13 +1,17 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <list>
+
 #include "frame.h"
 #include "paddle.h"
+#include "ball.h"
 #include "direction.h"
 
-class Paddle;
 class GameFrame : public Frame{
 private:
-	Paddle * paddle;
+	Paddle* paddle;
+	Ball* ball;
+	std::list<sf::RectangleShape> bricks;
 
 public:
 	// Constructors

@@ -5,6 +5,7 @@ using namespace sf;
 
 Paddle::Paddle() {
 	body.setSize(Vector2f((Model::gui->getWidth() / 8), (Model::gui->getHeight() / 32)));
+	body.setOrigin(Vector2f(body.getSize().x/2, body.getSize().y/2));
 	body.setPosition(Model::gui->getWidth() / 2, 7 * Model::gui->getHeight() / 8);
 	body.setFillColor(Color::Cyan);
 	speed = 10;
@@ -28,11 +29,11 @@ void Paddle::update() {
 		break;
 	}
 
-	if (body.getPosition().x < 0) {
-		body.setPosition(Vector2f(0, body.getPosition().y));
+	if (body.getPosition().x - body.getSize().x / 2 < 0) {
+		body.setPosition(Vector2f(body.getSize().x / 2, body.getPosition().y));
 	}
-	else if (body.getPosition().x + body.getSize().x > Model::gui->getWidth()) {
-		body.setPosition(Vector2f(Model::gui->getWidth() - body.getSize().x, body.getPosition().y));
+	else if (body.getPosition().x + body.getSize().x/2 > Model::gui->getWidth()) {
+		body.setPosition(Vector2f(Model::gui->getWidth() - body.getSize().x/2, body.getPosition().y));
 	}
 }
 

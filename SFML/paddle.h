@@ -5,11 +5,12 @@
 
 class Paddle {
 private:
-	sf::RectangleShape body;
 	float speed;
 	Direction direction;
 
 public:
+	sf::RectangleShape body;
+
 	// Constructors
 	Paddle();
 
